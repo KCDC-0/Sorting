@@ -2,15 +2,26 @@
 
 Collection of some sorting algorithms I coded
 
+Python implementations:
+- Bubble sort - 2022
+- Insertion sort - 2022
+- Merge sort - 2022
+- Quick sort - 2022
 
-Bubble sort - 2022
+<br>
 
-Insertion sort - 2022
+Java implementations (Geeksforgeeks):
+- Bubble sort - 2026
+- Insertion sort - 2026
+- Selection sort - 2026
+- Merge sort - 2026
+- Quick sort - 2026
+- Heap sort - 2026
+- Cycle sort - 2026
+- 3 Way merge sort - 2026
 
-Merge sort - 2022
 
-Quick sort - 2022
-
+<br>
 
 # Possible extensions:
 - cleaner code
