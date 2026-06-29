@@ -7,6 +7,10 @@ Python implementations:
 - Insertion sort - 2022
 - Merge sort - 2022
 - Quick sort - 2022
+- Count sort - 2026
+- Radix sort - 2026
+
+- space and time comparison function (memory and time taken)
 
 <br>
 
@@ -21,9 +25,12 @@ Java implementations (Geeksforgeeks):
 - 3 Way merge sort - 2026
 
 
+
 <br>
 
 # Possible extensions:
 - cleaner code
-- radix sort / counting sort
-- implementation in other languages
+- radix sort / counting sort [done]
+- implementation in other languages [done]
+- comparison function [done]
+- timsort / other sorting algs

@@ -1,6 +1,8 @@
-### Bubble Sort, Insertion Sort, Merge Sort, Quick Sort
+### Comparison sorts: Bubble Sort, Insertion Sort, Merge Sort, Quick Sort
+### Non-comparison sorts: Count Sort, Radix Sort
 
 def bubble_sort(lst, order = 'ascending'):
+    '''Bubble Sort'''
     count = 1
     while count != len(lst):
         count = 1
@@ -35,6 +37,7 @@ def bubble_sort(lst, order = 'ascending'):
     return lst
 
 def insertion_sort(lst, order = 'ascending'):
+    '''Insertion Sort'''
     ls = []
     ls.append(lst[0])
     lst = lst[1:]
@@ -53,6 +56,7 @@ def insertion_sort(lst, order = 'ascending'):
     return ls
 
 def mergeSort(lst, order = 'ascending'):
+    '''Merge Sort'''
     res = []
     if len(lst) > 1:
         front = mergeSort(lst[:len(lst) // 2])
@@ -77,6 +81,7 @@ def mergeSort(lst, order = 'ascending'):
     return res
 
 def quickSort(lst):
+    '''Quick Sort'''
     res = []
     if len(lst) == 1 or len(lst) == 0:
         return lst
@@ -99,7 +104,62 @@ def quickSort(lst):
     front = quickSort(fro)
     back = quickSort(bac)
     front.append(pivot)
-    return front + back
+    return front + pivot + back
+
+
+def countSort(lst):
+    '''Count Sort'''
+    if not lst:
+        return []
+
+    maxval = max(lst)
+
+    count = [0] * (maxval + 1)
+
+    for v in lst:
+        count[v] += 1
+
+    for i in range(1, maxval + 1):
+        count[i] += count[i - 1]
+
+    ans = [0] * len(lst)
+
+    for i in range(len(lst) - 1, -1, -1):
+        v = lst[i]
+        ans[count[v] - 1] = v
+        count[v] -= 1
+
+    return ans
+
+
+def radixSort(lst):
+    '''Radix Sort'''
+    max_element = max(lst)
+
+    place = 1
+    while max_element // place > 0:
+        size = len(lst)
+        output = [0] * size
+        count = [0] * 10
+
+        for i in range(0, size):
+            index = lst[i] // place
+            count[index % 10] += 1
+
+        for i in range(1, 10):
+            count[i] += count[i - 1]
+
+        i = size - 1
+        while i >= 0:
+            index = lst[i] // place
+            output[count[index % 10] - 1] = lst[i]
+            count[index % 10] -= 1
+            i -= 1
+
+        for i in range(0, size):
+            lst[i] = output[i]
+
+        place *= 10
             
 
 
